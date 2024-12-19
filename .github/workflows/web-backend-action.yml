@@ -15,7 +15,7 @@ jobs:
     
     - name: Build Docker image
       run: |
-        docker build -t nodejs-app:latest .
+        docker build -t web-backend:latest .
  
     - name: Get current time
       run: echo "CURRENT_TIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
@@ -33,4 +33,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: lewisjlee/nodejs-app:${{ env.CURRENT_TIME }}
+        tags: lewisjlee/web-backend:${{ env.CURRENT_TIME }}
